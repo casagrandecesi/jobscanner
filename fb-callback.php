@@ -78,4 +78,5 @@ do {
 } while ($postsEdge);
 
 header('Content-Type: application/json');
-echo json_encode($allPosts, JSON_PRETTY_PRINT);
+$_SESSION['allPosts'] = $allPosts;
+header('Location analizza_post.php');
