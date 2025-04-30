@@ -54,7 +54,7 @@ $allPosts = $_SESSION['allPosts'] ?? [];
             <div class="card h-100 shadow-sm">
               <div class="card-body d-flex flex-column">
                 <?php if (!empty($post['created_time']['date'])): ?>
-                  <h6 class="card-subtitle mb-2 text-muted"><?php echo date('d/m/Y H:i', strtotime($post['created_time']['date'])); ?></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo date('d/m/Y H:i', strtotime($post['created_time']['date'])); ?> UTC</h6>
                 <?php endif; ?>
                 <?php if (!empty($post['message'])): ?>
                   <p class="card-text flex-grow-1"><?php echo nl2br(htmlspecialchars($post['message'])); ?></p>
