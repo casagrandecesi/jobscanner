@@ -1,5 +1,15 @@
 <?php
     session_start();
+
+    // Codice di prova da commentare in produzione
+    {
+      $postsJson = file_get_contents('post-di-prova.json');
+      $allPosts = json_decode($postsJson, true);
+      $_SESSION['allPosts'] = $allPosts;
+      header('Location: analizza_post.php');
+      exit(0);
+    }
+
     require_once __DIR__ . '/vendor/autoload.php';
     $fb = new \Facebook\Facebook([
       'app_id' => '1004570211088665',
