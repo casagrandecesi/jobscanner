@@ -9,7 +9,7 @@
     $helper = $fb->getRedirectLoginHelper();
     $_SESSION['FBRLH_state'] = $_GET['state'] ?? null;
     $permissions = ['user_posts'];
-    $loginUrl = $helper->getLoginUrl('https://www.bernardi.cloud/jobscanner/fb-callback.php', $permissions);
+    $loginUrl = $helper->getLoginUrl('https://www.casagrande-cesi.it/jobscanner/fb-callback.php', $permissions);
 ?><!doctype html>
 <html lang="it">
   <head>

@@ -18,7 +18,7 @@ $helper = $fb->getRedirectLoginHelper();
 
 try {
     // Scambia il codice di autorizzazione con un access token (usa lo stesso redirect URI configurato nell'app FB)
-    $accessToken = $helper->getAccessToken('https://www.bernardi.cloud/jobscanner/fb-callback.php');
+    $accessToken = $helper->getAccessToken('https://www.casagrande-cesi.it/jobscanner/fb-callback.php');
 } catch(\Facebook\Exceptions\FacebookResponseException $e) {
     echo 'Graph returned an error: ' . $e->getMessage();
     exit;
