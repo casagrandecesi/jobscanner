@@ -1,6 +1,8 @@
 <?php
 session_start();
+require 'filter.php';
 $allPosts = $_SESSION['allPosts'] ?? [];
+$allPosts = filterEmbarrassingPosts($allPosts);
 ?>
 <!doctype html>
 <html lang="it">
@@ -10,34 +12,20 @@ $allPosts = $_SESSION['allPosts'] ?? [];
   <title>JobScanner - Analisi Post Facebook</title>
   <link rel="icon" type="image/png" href="/jobscanner/favicon-96x96.png" sizes="96x96">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    .hero {
-      background-image: url('hero.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 0;
-      color: white;
-      text-align: center;
-    }
-
-    .hero img.logo-img {
-      width: 50%;
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="hero">
     <div class="container hero-content">
       <img src="logo-white.png" alt="JobScanner Logo" class="logo-img">
-      <h1 class="display-4">Analisi Post Facebook</h1>
-      <p class="lead">Ecco i tuoi post estratti!</p>
+      <h1 class="display-4">Post Facebook imbarazzanti</h1>
+      <?php if (count($allPosts) === 1) { ?>
+      <p class="lead">Guarda questo post, potrebbe essere opportuno cancellarli prima di un colloquio di lavoro</p>
+      <?php } elseif (count($allPosts) > 1) { ?>
+      <p class="lead">Guarda questi post, potrebbe essere opportuno cancellarli prima di un colloquio di lavoro</p>
+      <?php } else { ?>
+      <p class="lead">Non ho rilevato post da cancellare... Ricordati però che non sono infallibile</p>
+      <?php } ?>
       <a href="index.php" class="btn btn-light btn-lg mt-3">Torna alla Home</a>
     </div>
   </header>
@@ -46,7 +34,7 @@ $allPosts = $_SESSION['allPosts'] ?? [];
     <div class="row">
       <?php if (empty($allPosts)): ?>
         <div class="col-12 text-center">
-          <p class="fs-4">Nessun post disponibile.</p>
+          <p class="fs-4">Non ho rilevato post da cancellare</p>
         </div>
       <?php else: ?>
         <?php foreach ($allPosts as $post): ?>
@@ -72,11 +60,7 @@ $allPosts = $_SESSION['allPosts'] ?? [];
     </div>
   </div>
 
-  <footer class="bg-light py-4">
-    <div class="container text-center">
-      <p class="mb-0">&copy; <?php echo date('Y'); ?> JobScanner - Tutti i diritti riservati</p>
-    </div>
-  </footer>
+  <?php include 'footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
