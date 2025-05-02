@@ -1,0 +1,50 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .hero {
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-custom {
+    margin: 10px;
+  }
+
+  .logo-img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+  }
+
+  footer a {
+    color:white;
+  }

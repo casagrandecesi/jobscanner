@@ -31,54 +31,7 @@ if (true) {
   <title>JobScanner - Scan your social accunts for embarassing posts before job interviews</title>
   <link rel="icon" type="image/png" href="/jobscanner/favicon-96x96.png" sizes="96x96">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    .hero {
-      background-image: url('hero.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .btn-custom {
-      margin: 10px;
-    }
-
-    .logo-img {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <script>
     function openVideoPopup() {
       if (window.innerWidth > 768) {
@@ -128,9 +81,7 @@ if (true) {
     </div>
   </div>
 
-  <footer>
-    <p>&copy; <?php echo date('Y'); ?> JobScanner - Tutti i diritti riservati</p>
-  </footer>
+ <?php include 'footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
