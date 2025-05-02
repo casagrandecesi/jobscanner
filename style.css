@@ -48,3 +48,36 @@ body {
   footer a {
     color:white;
   }
+
+  .btn-custom {
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Facebook blue */
+  .btn-fb {
+    background-color: #1877F2;
+    border-color: #1877F2;
+    color: #fff;
+  }
+  .btn-fb:hover {
+    background-color: #165DB8;
+    border-color: #165DB8;
+  }
+
+  /* Instagram gradient */
+  .btn-ig {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+    border: none;
+    color: #fff;
+  }
+  .btn-ig:hover {
+    background: linear-gradient(45deg, #DD2A7B, #8134AF, #F58529);
+  }

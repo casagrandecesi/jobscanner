@@ -29,7 +29,7 @@ $allPosts = filterEmbarrassingPosts($allPosts);
       <a href="index.php" class="btn btn-light btn-lg mt-3">Torna alla Home</a>
     </div>
   </header>
-
+  <?php include 'disclaimer.php'; ?>
   <div class="container my-5">
     <div class="row">
       <?php if (empty($allPosts)): ?>
