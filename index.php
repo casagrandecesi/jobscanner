@@ -2,7 +2,7 @@
 session_start();
 
 // Codice di prova da commentare in produzione
-if (true) {
+if (false) {
   $postsJson = file_get_contents('post-di-prova.json');
   $allPosts = json_decode($postsJson, true);
   $_SESSION['allPosts'] = $allPosts;
@@ -35,7 +35,7 @@ if (true) {
   <link rel="stylesheet" href="style.css">
   <script>
     // URL del video (usala anche in openVideoPopup)
-    const videoURL = 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+    const videoURL = 'https://www.youtube.com/watch?v=YYwlrkMBZAg';
 
     function openVideoPopup() {
       if (window.innerWidth > 768) {
@@ -43,7 +43,7 @@ if (true) {
         document.getElementById('videoFrame').src = videoURL + '?autoplay=1';
         videoModal.show();
       } else {
-        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        window.location.href = 'https://www.youtube.com/watch?v=YYwlrkMBZAg';
       }
     }
   </script>
