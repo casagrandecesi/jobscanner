@@ -34,17 +34,8 @@ if (false) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
   <script>
-    // URL del video (usala anche in openVideoPopup)
-    const videoURL = 'https://www.youtube.com/watch?v=YYwlrkMBZAg';
-
     function openVideoPopup() {
-      if (window.innerWidth > 768) {
-        const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
-        document.getElementById('videoFrame').src = videoURL + '?autoplay=1';
-        videoModal.show();
-      } else {
-        window.location.href = 'https://www.youtube.com/watch?v=YYwlrkMBZAg';
-      }
+      window.location.href = 'https://www.youtube.com/watch?v=YYwlrkMBZAg';
     }
   </script>
 
